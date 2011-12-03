@@ -1,8 +1,12 @@
+# default padrino
 .DS_Store
-*.swp
 log/**/*
 tmp/**/*
 bin/*
 vendor/gems/*
 !vendor/gems/cache/
 .sass-cache/*
+
+# ten_thousand_hours_app ignores
+*.swp
+config/database.rb
