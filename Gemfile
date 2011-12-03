@@ -19,6 +19,7 @@ gem 'dm-migrations'
 gem 'dm-constraints'
 gem 'dm-aggregates'
 gem 'dm-core'
+gem 'dm-mysql-adapter'
 
 # Test requirements
 gem 'rspec', :group => "test"
