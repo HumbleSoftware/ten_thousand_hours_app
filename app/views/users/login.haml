@@ -1,0 +1,10 @@
+.login
+  - form_tag url_for(:users, :login), :method => 'get' do
+    .field
+      %label Email:
+      = text_field_tag 'email_address', :value => params[:email_address]
+    .field
+      %label Password:
+      = password_field_tag 'password'
+    .field
+      = submit_tag 'Login'
