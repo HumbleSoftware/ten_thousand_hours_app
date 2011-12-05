@@ -1,5 +1,5 @@
 .login
-  - form_tag url_for(:users, :login), :method => 'get' do
+  - form_tag url_for(:users, :login), :method => 'post' do
     .field
       %label Email:
       = text_field_tag 'email_address', :value => params[:email_address]
