@@ -26,6 +26,7 @@ TenThousandHoursApp.controllers :users do
   end
 
   get :register do
+    render 'users/register'
   end
 
   post :login do

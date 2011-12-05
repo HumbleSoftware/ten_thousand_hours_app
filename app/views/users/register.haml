@@ -1,0 +1,13 @@
+.register
+  - form_tag url_for(:users, :register), :method => 'post' do
+    .field
+      %label Email:
+      = text_field_tag 'email_address', :value => params[:email_address]
+    .field
+      %label Password:
+      = password_field_tag 'password'
+    .field
+      %label Repeat Password:
+      = password_field_tag 'password_repeat'
+    .field
+      = submit_tag 'Register'
