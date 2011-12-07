@@ -21,18 +21,18 @@ TenThousandHoursApp.controllers :users do
   get :index do
   end
 
-  get :login do
+  get :login, :map => '/login' do
     render 'users/login'
   end
 
-  get :register do
+  get :register, :map => '/register' do
     render 'users/register'
   end
 
-  post :login do
+  post :login, :map => '/login' do
   end
 
-  post :register do
+  post :register, :map => '/register' do
   end
 
 end
