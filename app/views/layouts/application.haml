@@ -1,0 +1,22 @@
+!!! Strict
+%html
+  %head
+    %title= [@title, "ten thousand hours"].compact.join(" | ")
+    = javascript_include_tag 'jquery', 'application'
+    = yield_content :include
+  %body
+    #container
+      #header
+        %h1 ten thousand hours
+      #main= yield
+      #navigation
+        %p Links
+        %ul.main
+          %li= link_to 'Home', url_for(:index)
+        %p User
+        %ul.user
+          %li= link_to 'Login', url_for(:users, :login)
+          %li= link_to 'Register', url_for(:users, :register)
+      #footer
+        %p Copyright (c) 2011 HumbleSoftware
+
