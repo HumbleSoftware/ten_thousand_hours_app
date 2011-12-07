@@ -26,6 +26,7 @@ TenThousandHoursApp.controllers :users do
   end
 
   get :register, :map => '/register' do
+    @account = Account.new
     render 'users/register'
   end
 

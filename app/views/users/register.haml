@@ -1,13 +1,16 @@
 .register
-  - form_tag url_for(:users, :register), :method => 'post' do
+  -form_for :account, url(:users, :register), :class => :form do |f|
     .field
-      %label Email:
-      = text_field_tag 'email_address', :value => params[:email_address]
+      =f.label :email
+      =f.error_message_on :email
+      =f.text_field :email, :class => 'text-field'
     .field
-      %label Password:
-      = password_field_tag 'password'
+      =f.label :password
+      =f.error_message_on :password
+      =f.password_field :password, :class => 'password-field'
     .field
-      %label Repeat Password:
-      = password_field_tag 'password_repeat'
+      =f.label :password_confirmation
+      =f.error_message_on :password_confirmation
+      =f.password_field :password_confirmation, :class => 'password-field'
     .field
-      = submit_tag 'Register'
+      =f.submit :save, :class => :button
