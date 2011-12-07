@@ -2,6 +2,7 @@
 %html
   %head
     %title= [@title, "ten thousand hours"].compact.join(" | ")
+    = stylesheet_link_tag 'reset'
     = javascript_include_tag 'jquery', 'application'
     = yield_content :include
   %body
