@@ -1,0 +1,53 @@
+body {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  color: #333;
+}
+
+#container {
+  width: 800px;
+  margin: 0px auto;
+  position: relative;
+}
+
+#header {
+  padding: 28px 0px;
+}
+#header h1 {
+  font-size: 2.8em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 0 #ccc;
+}
+
+#navigation div.user {
+  position: absolute;
+  top: 6px;
+  font-size: .7em;
+  right: 0px;
+}
+#navigation div.user p {
+  display: none;
+}
+#navigation div.user li {
+  float: left;
+  margin: 0px 4px;
+}
+#navigation div.main {
+  width: 60px;
+  position: fixed;
+  top: 96px;
+  left: 50%;
+  margin-left: -460px;
+}
+
+#footer {
+  position: fixed;
+  margin: 24px 0px;
+  font-size: .8em;
+  border-top: 2px solid #777;
+  border-bottom: 2px solid #777;
+  padding: 8px 0px;
+  text-align: center;
+  bottom: 0px;
+  width: 800px;
+}

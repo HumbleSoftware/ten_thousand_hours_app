@@ -2,7 +2,7 @@
 %html
   %head
     %title= [@title, "ten thousand hours"].compact.join(" | ")
-    = stylesheet_link_tag 'reset'
+    = stylesheet_link_tag 'reset', 'application'
     = javascript_include_tag 'jquery', 'application'
     = yield_content :include
   %body
@@ -11,13 +11,15 @@
         %h1 ten thousand hours
       #main= yield
       #navigation
-        %p Links
-        %ul.main
-          %li= link_to 'Home', url_for(:index)
-        %p User
-        %ul.user
-          %li= link_to 'Login', url_for(:users, :login)
-          %li= link_to 'Register', url_for(:users, :register)
+        .main
+          %p Links
+          %ul
+            %li= link_to 'Home', url_for(:index)
+        .user
+          %p User
+          %ul
+            %li= link_to 'Login', url_for(:users, :login)
+            %li= link_to 'Register', url_for(:users, :register)
       #footer
         %p Copyright (c) 2011 HumbleSoftware
 
