@@ -6,6 +6,10 @@ class TenThousandHoursApp < Padrino::Application
 
   enable :sessions
 
+  get :index do
+    render 'index'
+  end
+
   ##
   # Caching support
   #
