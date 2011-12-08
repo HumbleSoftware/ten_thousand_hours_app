@@ -3,6 +3,9 @@ class Project
 
   belongs_to :account
 
+  validates_presence_of :account_id
+  validates_presence_of :title
+
   # property <name>, <type>
   property :id, Serial
   property :account_id, Integer
