@@ -1,4 +1,5 @@
 .register
+  %h2 Register:
   -form_for :account, url(:users, :register), :class => :form do |f|
     .field
       =f.label :email
@@ -9,8 +10,8 @@
       =f.error_message_on :password
       =f.password_field :password, :class => 'password-field'
     .field
-      =f.label :password_confirmation
+      =f.label :confirm_password
       =f.error_message_on :password_confirmation
       =f.password_field :password_confirmation, :class => 'password-field'
     .field
-      =f.submit :save, :class => :button
+      =f.submit 'Register', :class => :button
