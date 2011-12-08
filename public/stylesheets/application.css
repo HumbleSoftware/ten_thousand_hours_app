@@ -23,6 +23,10 @@ body {
   font-size: 1.6em;
   margin-bottom: 12px;
 }
+#main h3 {
+  font-size: 1.3em;
+  margin: 8px 0px;
+}
 
 #navigation div.user {
   position: absolute;

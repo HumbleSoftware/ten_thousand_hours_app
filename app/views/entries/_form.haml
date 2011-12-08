@@ -1,0 +1,15 @@
+-form_for :entry, url(:entries, :create, :project_id => @project.id), :class => :form do |f|
+  .field
+    =f.label :date
+    =f.error_message_on :date
+    =f.text_field :date, :class => 'text-field'
+  .field
+    =f.label :time
+    =f.error_message_on :time
+    =f.text_field :time, :class => 'text-field'
+  .field
+    =f.label :description
+    =f.error_message_on :description
+    =f.text_area :description, :class => 'text-area'
+  .field
+    =f.submit 'Log Entry', :class => :button

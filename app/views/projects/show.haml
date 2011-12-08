@@ -1,3 +1,6 @@
 .post
-  %h2 Project: #{@project.title}
-  .description= @project.description
+  %h2.title Project: #{@project.title}
+  %p.description= @project.description
+%h3 Entries
+.entries
+  =partial 'entries/form'
