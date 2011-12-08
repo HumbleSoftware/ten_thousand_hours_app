@@ -1,10 +1,12 @@
 .login
-  - form_tag url_for(:users, :login), :method => 'post' do
+  %h2 Login:
+  .flash=[:error, :warning, :notice].map { |type| flash_tag(type, :class => "message #{type}") }.join
+  -form_tag url_for(:users, :login) do
     .field
       %label Email:
-      = text_field_tag 'email_address', :value => params[:email_address]
+      =text_field_tag 'email', :value => params[:email], :class => 'text-field'
     .field
       %label Password:
-      = password_field_tag 'password'
+      =password_field_tag 'password', :class => 'password-field'
     .field
-      = submit_tag 'Login'
+      =submit_tag 'Login'

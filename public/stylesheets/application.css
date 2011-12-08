@@ -76,7 +76,8 @@ form input.button {
   float: right;
 }
 
-#main div.register form {
+#main div.register form,
+#main div.login form {
   width: 360px;
   margin: 0px auto;
 }
