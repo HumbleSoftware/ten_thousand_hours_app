@@ -1,8 +1,9 @@
 class Category
   include DataMapper::Resource
 
+  belongs_to :project
+
   # property <name>, <type>
   property :id, Serial
-  property :project_id, Integer
   property :category, String
 end
