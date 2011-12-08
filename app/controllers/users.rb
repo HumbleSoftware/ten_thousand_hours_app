@@ -25,6 +25,11 @@ TenThousandHoursApp.controllers :users do
     render 'users/login'
   end
 
+  get :logout, :map => '/logout' do
+    set_current_account(nil)
+    redirect url(:users, :login)
+  end
+
   get :register, :map => '/register' do
     @account = Account.new
     render 'users/register'
