@@ -18,8 +18,11 @@
         .user
           %p User
           %ul
-            %li= link_to 'Login', url_for(:users, :login)
-            %li= link_to 'Register', url_for(:users, :register)
+            -if logged_in? 
+              %li= link_to 'Logout', url_for(:users, :logout)
+            -else
+              %li= link_to 'Login', url_for(:users, :login)
+              %li= link_to 'Register', url_for(:users, :register)
       #footer
         %p Copyright (c) 2011 HumbleSoftware
 
