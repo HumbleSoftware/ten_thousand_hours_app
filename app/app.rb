@@ -11,6 +11,15 @@ class TenThousandHoursApp < Padrino::Application
     render 'index'
   end
 
+  set :login_page, '/login'
+
+  access_control.roles_for :any do |role|
+    role.protect '/projects'
+  end
+
+  access_control.roles_for :user do |role|
+    role.project_module :projects, "/projects"
+  end
   ##
   # Caching support
   #
