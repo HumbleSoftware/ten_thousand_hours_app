@@ -5,6 +5,11 @@ TenThousandHoursApp.controllers :projects do
     render 'projects/index'
   end
 
+  get :show, :with => :id do
+    @project = Project.get(params[:id])
+    render 'projects/show'
+  end
+
   get :new do
     render 'projects/new'
   end
