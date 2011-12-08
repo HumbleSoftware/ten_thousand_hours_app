@@ -35,6 +35,13 @@ TenThousandHoursApp.controllers :users do
   end
 
   post :login, :map => '/login' do
+    if account = Account.authenticate(params[:email], params[:password])
+      set_current_account(account)
+    else
+      params[:email], params[:password] = h(params[:email]), h(params[:password])
+      flash[:warning] = "Email or password incorrect."
+      render 'users/login'
+    end
   end
 
   post :register, :map => '/register' do
