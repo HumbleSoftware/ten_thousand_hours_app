@@ -5,6 +5,8 @@ migration 2, :create_projects do
       column :account_id, Integer
       column :title, String, :length => 255
       column :description, Text
+      column :created_at, DateTime
+      column :updated_at, DateTime
     end
   end
 
