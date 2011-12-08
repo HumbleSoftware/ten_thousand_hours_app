@@ -28,11 +28,11 @@ TenThousandHoursApp.controllers :users do
   post :login, :map => '/login' do
     if account = Account.authenticate(params[:email], params[:password])
       set_current_account(account)
-      redirect '/'
+      redirect url(:index)
     else
       params[:email], params[:password] = h(params[:email]), h(params[:password])
       flash[:warning] = "Email or password incorrect."
-      render 'users/login'
+      redirect url(:users, :login)
     end
   end
 
