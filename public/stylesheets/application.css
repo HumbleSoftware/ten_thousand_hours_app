@@ -68,16 +68,16 @@ form span.error {
   font-size: .8em;
   text-transform: lowercase;
 }
-form input.text-field, input.password-field {
+input.text-field,
+input.password-field,
+form textarea {
   display: block;
   width: 100%;
 }
 form input.button {
   float: right;
 }
-
-#main div.register form,
-#main div.login form {
+form.form {
   width: 360px;
   margin: 0px auto;
 }
