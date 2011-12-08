@@ -4,7 +4,11 @@ TenThousandHoursApp.controllers :users do
   end
 
   get :login, :map => '/login' do
-    render 'users/login'
+    if logged_in?
+      redirect '/'
+    else
+      render 'users/login'
+    end
   end
 
   get :logout, :map => '/logout' do
@@ -24,6 +28,7 @@ TenThousandHoursApp.controllers :users do
   post :login, :map => '/login' do
     if account = Account.authenticate(params[:email], params[:password])
       set_current_account(account)
+      redirect '/'
     else
       params[:email], params[:password] = h(params[:email]), h(params[:password])
       flash[:warning] = "Email or password incorrect."
