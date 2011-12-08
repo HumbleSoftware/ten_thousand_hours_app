@@ -14,7 +14,8 @@
         .main
           %p Links
           %ul
-            %li= link_to 'Home', url_for(:index)
+            %li= link_to 'Home', url_for(:index), :class => 'current' if :current
+            %li= link_to 'Projects', url_for(:projects, :index), :class => 'current' if :current
         .user
           %p User
           %ul
