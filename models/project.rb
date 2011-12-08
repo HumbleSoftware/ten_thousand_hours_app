@@ -1,6 +1,8 @@
 class Project
   include DataMapper::Resource
 
+  belongs_to :account
+
   # property <name>, <type>
   property :id, Serial
   property :account_id, Integer
