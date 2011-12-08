@@ -1,6 +1,7 @@
 TenThousandHoursApp.controllers :projects do
 
   get :index do
+    @projects = Project.all( :account => current_account)
     render 'projects/index'
   end
 
