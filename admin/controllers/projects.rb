@@ -12,6 +12,7 @@ Admin.controllers :projects do
 
   post :create do
     @project = Project.new(params[:project])
+    @project.account = current_account
     if @project.save
       flash[:notice] = 'Project was successfully created.'
       redirect url(:projects, :edit, :id => @project.id)
