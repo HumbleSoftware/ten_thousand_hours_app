@@ -10,6 +10,6 @@ class Entry
   property :id, Serial
   property :category_id, Integer
   property :date, Date
-  property :time, Time
+  property :time, Integer
   property :description, String
 end
