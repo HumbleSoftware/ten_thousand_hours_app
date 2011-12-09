@@ -19,14 +19,16 @@ TenThousandHoursApp.controllers :entries, :parent => :projects do
       @entry.errors.add(:date, 'Invalid date.')
     end
 
-    begin
-      time = Date.parse(time)
-      @entry.time = time;
-    rescue
+    if (time.match(':'))
+      hours, minutes = time.split(':')
+      @entry.time = hours.to_i * 60 + minutes.to_i
+    elsif (time.match(/\d/))
+      @entry.time = time
+    else
       @entry.errors.add(:time, 'Invalid time.')
     end
 
-    if @entry.errors
+    if @entry.errors.count > 0
       render 'projects/show'
     elsif @entry.save
       redirect back

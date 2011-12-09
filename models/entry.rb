@@ -4,7 +4,11 @@ class Entry
   belongs_to :project
 
   validates_presence_of :date
+  validates_primitive_type_of :date,
+    :message => 'Invalid format.'
   validates_presence_of :time
+  validates_primitive_type_of :time,
+    :message => 'Invalid format.'
 
   # property <name>, <type>
   property :id, Serial
