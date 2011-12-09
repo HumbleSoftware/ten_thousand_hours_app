@@ -9,4 +9,5 @@ vendor/gems/*
 
 # ten_thousand_hours_app ignores
 *.swp
+Session.vim
 config/database.rb
