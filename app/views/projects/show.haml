@@ -1,5 +1,6 @@
 .post
   %h2.title Project: #{@project.title}
+  %p.total Total: #{Entry.all(:project_id => @project.id).sum(:time)} hours
   %p.description= @project.description
 %h3 Entries
 .entries
