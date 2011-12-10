@@ -13,7 +13,7 @@ class Entry
   # property <name>, <type>
   property :id, Serial
   property :category_id, Integer
-  property :date, Date
+  property :date, DateTime
   property :time, Integer
   property :description, String
 end
