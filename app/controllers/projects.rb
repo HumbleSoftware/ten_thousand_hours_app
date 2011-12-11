@@ -7,6 +7,8 @@ TenThousandHoursApp.controllers :projects do
 
   get :show, :with => :id do
     @project = Project.get(params[:id])
+    total = Entry.all(:project_id => @project.id).sum(:time);
+    @total = total ? total / 60 : 0
     render 'projects/show'
   end
 
