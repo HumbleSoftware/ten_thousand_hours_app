@@ -1,0 +1,3 @@
+%h2.title
+  Categories for #{link_to @project.title, url_for(:projects, :show, @project.id)} Entries
+.categories= partial 'categories/category', :collection => @categories
