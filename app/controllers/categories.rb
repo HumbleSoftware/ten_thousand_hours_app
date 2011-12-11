@@ -1,4 +1,4 @@
-TenThousandHoursApp.controllers :categories do
+TenThousandHoursApp.controllers :categories, :parent => :projects do
 
   post :create do
   end
