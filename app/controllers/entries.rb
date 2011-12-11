@@ -12,9 +12,13 @@ TenThousandHoursApp.controllers :entries, :parent => :projects do
     @project = Project.get(params[:project_id])
     @entry.project = @project
 
-    if (params[:entry][:time].match(':'))
+    if params[:entry][:time].match(':')
       hours, minutes = params[:entry][:time].split(':')
       @entry.time = hours.to_i * 60 + minutes.to_i
+    end
+
+    if params[:entry][:category_id] == ''
+      @entry.category_id = nil
     end
 
     if @entry.save

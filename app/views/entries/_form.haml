@@ -8,6 +8,10 @@
     =f.error_message_on :time
     =f.text_field :time, :class => 'text-field'
   .field
+    =f.label :cateogry
+    =f.error_message_on :category_id
+    =f.select :category_id, :include_blank => 'None', :options => Category.all(:project_id => @project.id).map { |c| [c.category, c.id]}
+  .field
     =f.label :description
     =f.error_message_on :description
     =f.text_area :description, :class => 'text-area'
