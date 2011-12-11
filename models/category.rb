@@ -4,6 +4,7 @@ class Category
   belongs_to :project
 
   validates_presence_of :category
+  validates_uniqueness_of :category
 
   # property <name>, <type>
   property :id, Serial
