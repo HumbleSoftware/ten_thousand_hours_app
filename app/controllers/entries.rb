@@ -1,5 +1,11 @@
 TenThousandHoursApp.controllers :entries, :parent => :projects do
 
+  get :index do
+    @project = Project.get(params[:project_id])
+    @entries = Entry.all(:project_id => @project.id)
+    render 'entries/index'
+  end
+
   post :create do
 
     @entry = Entry.new(params[:entry])

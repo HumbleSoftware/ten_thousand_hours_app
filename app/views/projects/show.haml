@@ -3,5 +3,6 @@
   %p.total Total: #{Entry.all(:project_id => @project.id).sum(:time) / 60} hours
   %p.description= @project.description
 %h3 Entries
+.nav= link_to 'view all', url_for(:entries, :index, :project_id => @project.id)
 .entries
   =partial 'entries/form'
