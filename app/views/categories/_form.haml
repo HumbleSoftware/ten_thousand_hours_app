@@ -1,0 +1,7 @@
+-form_for :category, url(:categories, :create, :project_id => @project.id), :class => :form do |f|
+  .field
+    =f.label :category
+    =f.error_message_on :category
+    =f.text_field :category, :class => 'text-field'
+  .field
+    =f.submit 'Add Category', :class => :button
