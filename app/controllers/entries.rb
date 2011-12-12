@@ -1,4 +1,15 @@
-TenThousandHoursApp.controllers :entries, :parent => :projects do
+TenThousandHoursApp.controllers :entries,
+  :parent => :projects,
+  :conditions => { :protect => true } do
+
+
+  def self.protect(protected)
+    condition do
+      @project = Project.get(params[:project_id])
+      @error_message = 'You do not have access to entries for this project.'
+      halt 403, @error_message unless @project.account == current_account
+    end if protected
+  end
 
   get :index do
     @project = Project.get(params[:project_id])
