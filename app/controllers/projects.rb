@@ -1,22 +1,31 @@
-TenThousandHoursApp.controllers :projects do
+TenThousandHoursApp.controllers :projects,
+  :conditions => { :protect => true } do
 
-  get :index do
+
+  def self.protect(protected)
+    condition do
+      @error_message = 'You do not have access to this project.'
+      halt 403, @error_message unless project_owned_by_current_user
+    end if protected
+  end
+
+  get :index, :protect => false do
     @projects = Project.all( :account => current_account)
     render 'projects/index'
   end
 
-  get :show, :with => :id do
-    @project = Project.get(params[:id])
+  get :show, :with => :project_id do
+    @project = Project.get(params[:project_id])
     total = Entry.all(:project_id => @project.id).sum(:time);
     @total = total ? total / 60 : 0
     render 'projects/show'
   end
 
-  get :new do
+  get :new, :protect => false do
     render 'projects/new'
   end
 
-  post :create do
+  post :create, :protect => false do
     @project = Project.new(params[:project])
     @project.account = current_account
     if @project.save
