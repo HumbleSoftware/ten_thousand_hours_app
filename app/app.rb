@@ -20,6 +20,11 @@ class TenThousandHoursApp < Padrino::Application
   access_control.roles_for :user do |role|
     role.project_module :projects, "/projects"
   end
+
+  error 403 do
+    render 'errors/403'
+  end
+
   ##
   # Caching support
   #
