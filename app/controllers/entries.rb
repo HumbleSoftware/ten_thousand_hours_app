@@ -5,9 +5,8 @@ TenThousandHoursApp.controllers :entries,
 
   def self.protect(protected)
     condition do
-      @project = Project.get(params[:project_id])
       @error_message = 'You do not have access to entries for this project.'
-      halt 403, @error_message unless @project.account == current_account
+      halt 403, @error_message unless project_owned_by_current_user
     end if protected
   end
 
