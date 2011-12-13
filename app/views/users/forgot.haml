@@ -1,0 +1,7 @@
+%h2 Forgot Password:
+-form_tag url(:users, :forgot), :class => :form do
+  .field
+    %label Email
+    =text_field_tag 'email', :value => params[:email], :class => 'text-field'
+  .field
+    =submit_tag 'Forgot Password'

@@ -16,6 +16,10 @@ TenThousandHoursApp.controllers :users do
     redirect url(:users, :login)
   end
 
+  get :forgot, :map => '/forgot' do
+    render 'users/forgot'
+  end
+
   get :register, :map => '/register' do
     @account = Account.new
     render 'users/register'
