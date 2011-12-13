@@ -83,4 +83,22 @@ TenThousandHoursApp.controllers :users do
     render 'users/reset_sent'
   end
 
+  post :reset, :map => '/reset' do
+    if user_has_valid_reset params[:email], params[:key]
+      @account.password = params[:password]
+      @account.password_confirmation = params[:password_confirmation]
+      @account.crypted_password = ''
+      if @account.save
+        @reset.update!(:used => true)
+        flash[:notice] = "Password successfully reset."
+        redirect url(:users, :login)
+      else
+        render 'users/reset'
+      end
+    else
+      @error_message = 'Invalid password reset token.'
+      halt 403
+    end
+  end
+
 end

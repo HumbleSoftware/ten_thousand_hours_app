@@ -2,9 +2,9 @@
 
 TenThousandHoursApp.helpers do
   def user_has_valid_reset(email, key)
-    account = Account.first(:email => email)
-    if account
-      @reset = Reset.first(:account_id => account.id, :password_key => key)
+    @account = Account.first(:email => email)
+    if @account
+      @reset = Reset.first(:account_id => @account.id, :password_key => key)
       !@reset.used if @reset
     end
   end
