@@ -29,4 +29,10 @@ describe "Reset Model" do
     reset.valid?.should be_true
   end
 
+  let(:reset_a) { Reset.new }
+  let(:reset_b) { Reset.new }
+  it 'should have different keys' do
+    (reset_a.password_key == reset_b.password_key).should be_false
+  end
+
 end
