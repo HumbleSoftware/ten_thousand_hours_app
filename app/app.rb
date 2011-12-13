@@ -1,4 +1,5 @@
 class TenThousandHoursApp < Padrino::Application
+  require 'json'
   register LessInitializer
   register Padrino::Rendering
   register Padrino::Mailer
