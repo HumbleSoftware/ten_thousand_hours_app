@@ -8,4 +8,6 @@ class Reset
   property :used, Boolean, :default => true
   property :created_at, DateTime
   property :updated_at, DateTime
+
+  belongs_to :account
 end
