@@ -59,6 +59,12 @@ TenThousandHoursApp.controllers :users do
     @account.role = 'user'
 
     if @account.save
+      email(
+        :from => '10000hours@humblesoftware.com',
+        :to => @account.email,
+        :subject => '10000 Hours - New Account Welcome',
+        :body => user_register_email
+      )
       redirect url(:users, :thankyou)
     else
       render 'users/register'

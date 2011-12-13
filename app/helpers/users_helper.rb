@@ -17,8 +17,16 @@ TenThousandHoursApp.helpers do
       :key => @reset.password_key,
       :email => @account.email
     )
-    body_content += "\n\n-10000 hours\n" 
+    body_content += "\n\n-10000 Hours App\n" 
     body_content
+  end
+
+  def user_register_email
+    message = "Thank you for creating an account with 10000 Hours."
+    message += "\n\nLogin here:\n"
+    message += base_url + url(:users, :login)
+    message += "\n\n-10000 Hours App\n"
+    message
   end
 
   def base_url
