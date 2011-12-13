@@ -1,12 +1,12 @@
-.login
-  %h2 Login:
-  .flash=[:error, :warning, :notice].map { |type| flash_tag(type, :class => "message #{type}") }.join
-  -form_tag url_for(:users, :login), :class => :form do
-    .field
-      %label Email:
-      =text_field_tag 'email', :value => params[:email], :class => 'text-field'
-    .field
-      %label Password:
-      =password_field_tag 'password', :class => 'password-field'
-    .field
-      =submit_tag 'Login'
+%h2 Login:
+=link_to 'forgot password?', url_for(:users, :forgot)
+.flash=[:error, :warning, :notice].map { |type| flash_tag(type, :class => "message #{type}") }.join
+-form_tag url_for(:users, :login), :class => :form do
+  .field
+    %label Email:
+    =text_field_tag 'email', :value => params[:email], :class => 'text-field'
+  .field
+    %label Password:
+    =password_field_tag 'password', :class => 'password-field'
+  .field
+    =submit_tag 'Login'
