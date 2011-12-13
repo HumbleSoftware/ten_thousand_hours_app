@@ -1,5 +1,6 @@
 class TenThousandHoursApp < Padrino::Application
   require 'json'
+  require 'securerandom'
   register LessInitializer
   register Padrino::Rendering
   register Padrino::Mailer

@@ -4,8 +4,8 @@ class Reset
   # property <name>, <type>
   property :id, Serial
   property :account_id, Integer
-  property :key, String
-  property :used, Bool
+  property :password_key, String, :length => 32, :default => SecureRandom.base64(24)
+  property :used, Boolean, :default => true
   property :created_at, DateTime
   property :updated_at, DateTime
 end
