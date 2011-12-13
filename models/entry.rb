@@ -2,6 +2,7 @@ class Entry
   include DataMapper::Resource
 
   belongs_to :project
+  belongs_to :category
 
   validates_presence_of :date
   validates_primitive_type_of :date,
