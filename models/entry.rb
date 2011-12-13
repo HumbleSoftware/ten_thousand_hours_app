@@ -1,9 +1,18 @@
 class Entry
   include DataMapper::Resource
 
+  # property <name>, <type>
+  property :id, Serial
+  property :category_id, Integer
+  property :date, DateTime
+  property :time, Integer
+  property :description, String
+
+  #parents
   belongs_to :project
   belongs_to :category
 
+  #validations
   validates_presence_of :date
   validates_primitive_type_of :date,
     :message => 'Invalid format.'
@@ -21,11 +30,4 @@ class Entry
     end
     true
   end
-
-  # property <name>, <type>
-  property :id, Serial
-  property :category_id, Integer
-  property :date, DateTime
-  property :time, Integer
-  property :description, String
 end
