@@ -19,7 +19,12 @@ describe "Reset Model" do
   end
 
   let(:reset) { Reset.new }
-  it 'should validate with defaults and user' do
+  it 'should not validate with defaults and no account' do
+    reset.valid?.should_not be_true
+  end
+
+  let(:reset) { Reset.new }
+  it 'should validate with defaults and account' do
     reset.account_id = 1
     reset.valid?.should be_true
   end
