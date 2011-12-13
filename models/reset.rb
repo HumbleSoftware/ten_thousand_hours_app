@@ -5,7 +5,7 @@ class Reset
   property :id, Serial
   property :account_id, Integer
   property :password_key, String, :length => 32, :default => lambda { |r, p| SecureRandom.base64(24) }
-  property :used, Boolean, :default => true
+  property :used, Boolean, :default => false
   property :created_at, DateTime
   property :updated_at, DateTime
 

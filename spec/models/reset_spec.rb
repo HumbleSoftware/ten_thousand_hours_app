@@ -7,9 +7,9 @@ describe "Reset Model" do
   end
 
   let(:reset) { Reset.new }
-  it 'should set used to true' do
+  it 'should set used to false' do
     reset.valid?
-    reset.used.should be_true
+    (reset.used === false).should be_true
   end
 
   let(:reset) { Reset.new }
