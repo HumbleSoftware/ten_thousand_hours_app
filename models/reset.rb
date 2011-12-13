@@ -14,4 +14,13 @@ class Reset
   validates_presence_of :account_id
   validates_presence_of :password_key
   validates_presence_of :used
+
+  # callbacks
+  before :save, :invalidate_old
+
+  private
+  def invalidate_old
+    resets = Reset.all(:account_id => @account_id, :used => false)
+    resets.update! :used => true
+  end
 end
