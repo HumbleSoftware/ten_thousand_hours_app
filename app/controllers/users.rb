@@ -20,6 +20,10 @@ TenThousandHoursApp.controllers :users do
     render 'users/forgot'
   end
 
+  get :reset, :map => '/reset' do
+    render 'users/reset'
+  end
+
   get :register, :map => '/register' do
     @account = Account.new
     render 'users/register'
@@ -51,6 +55,19 @@ TenThousandHoursApp.controllers :users do
     else
       render 'users/register'
     end
+  end
+
+  post :forgot, :map => '/forgot' do
+    @account = Account.first(:email => params[:email])
+    if (@account)
+      email(
+        :from => '10000hours@humblesoftware.com',
+        :to => @account.email,
+        :subject => '10000 Hours - Reset Password',
+        :body => user_reset_email
+      )
+    end
+    render 'users/reset_sent'
   end
 
 end
