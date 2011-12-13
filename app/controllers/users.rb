@@ -21,7 +21,15 @@ TenThousandHoursApp.controllers :users do
   end
 
   get :reset, :map => '/reset' do
-    render 'users/reset'
+    if user_has_valid_reset params[:email], params[:key]
+      render 'users/reset'
+    elsif @reset
+      @error_message = 'Password token already used.'
+      halt 403
+    else
+      @error_message = 'No password reset token found with that key.'
+      halt 403
+    end
   end
 
   get :register, :map => '/register' do

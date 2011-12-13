@@ -1,0 +1,15 @@
+%h2 Reset Password:
+-form_tag url(:users, :reset), :class => :form do
+  =hidden_field_tag :key, :value => params[:key]
+  =hidden_field_tag :email, :value => params[:email]
+  .field Account: #{params[:email]}
+  .field
+    =label_tag :password
+    =error_message_on @account, :password
+    =password_field_tag :password, :class => 'password-field'
+  .field
+    =label_tag :confirm_password
+    =error_message_on @account, :password_confirmation
+    =password_field_tag :password_confirmation, :class => 'password-field'
+  .field
+    =submit_tag 'Reset Password'
