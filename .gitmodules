@@ -1,0 +1,3 @@
+[submodule "public/vis"]
+	path = public/vis
+	url = git@github.com:HumbleSoftware/ten_thousand_hours_vis.git
