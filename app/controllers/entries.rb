@@ -10,11 +10,6 @@ TenThousandHoursApp.controllers :entries,
     end if protected
   end
 
-  #get :index, :provides => [:html, :rss, :atom] do
-  #  @posts = Post.all(:order => 'created_at desc')
-  #  render 'posts/index' 
-  #end
-
   get :index, :provides => [:html, :json] do
 
     @project = Project.get(params[:project_id])
