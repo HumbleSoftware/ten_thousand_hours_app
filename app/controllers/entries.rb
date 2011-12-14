@@ -39,7 +39,7 @@ TenThousandHoursApp.controllers :entries,
         @entries.each do |entry|
           if current_date != entry.date
             current_date = entry.date
-            json[:totals][count] = total
+            json[:totals].push [count, total]
             json[:dates][count] = current_date.strftime('%m/%d/%Y')
             count += 1
           end
@@ -48,7 +48,7 @@ TenThousandHoursApp.controllers :entries,
           entries_data.push [count, entry.time]
           total += entry.time
         end
-        json[:totals][count] = total
+        json[:totals].push [count, total]
 
         json.to_json
       else
