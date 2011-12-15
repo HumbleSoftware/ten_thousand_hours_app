@@ -2,7 +2,6 @@
   %h2.title Project: #{@project.title}
   %p.total Total: #{@total}
   %p.description= @project.description
-  .vis
 %h3 Entries
 .nav= link_to 'view all', url_for(:entries, :index, :project_id => @project.id)
 .nav= link_to 'categories', url_for(:categories, :index, :project_id => @project.id)
