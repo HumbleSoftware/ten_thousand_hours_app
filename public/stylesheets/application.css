@@ -19,6 +19,9 @@ body {
   text-shadow: 2px 2px 0 #ccc;
 }
 
+#main {
+  margin-bottom: 80px;
+}
 #main h2 {
   font-size: 1.6em;
   margin-bottom: 12px;
@@ -59,6 +62,23 @@ body {
   text-align: center;
   bottom: 0px;
   width: 800px;
+  background: #fff;
+}
+
+/* Vis Styles */
+div.vis {
+  width: 600px;
+  margin: 0px auto;
+  border: 1px solid #99CCFF;
+}
+div.practice .flotr-legend {
+  right: -200px !important;
+}
+div.practice .flotr-legend-bg {
+  display: none;
+}
+div.practice .flotr-mouse-value {
+  display: none;
 }
 
 /* Form Styles */
