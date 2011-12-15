@@ -2,7 +2,7 @@
 %html
   %head
     %title= [@title, "ten thousand hours"].compact.join(" | ")
-    = stylesheet_link_tag 'reset', 'application'
+    = stylesheet_link_tag 'reset', 'application', 'vis'
     = javascript_include_tag '/vis/lib/flotr2.min.js', '/vis/lib/bonzo.min.js', '/vis/lib/vis.min.js', '/vis/js/10000hours', 'jquery', 'vis'
     = yield_content :include
   %body
