@@ -4,7 +4,7 @@ migration 6, :create_resets do
       column :id, Integer, :serial => true
       column :account_id, Integer
       column :password_key, String, :length => 32
-      column :used, Boolean
+      column :used, DataMapper::Property::Boolean
       column :created_at, DateTime
       column :updated_at, DateTime
     end
